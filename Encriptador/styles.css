@@ -70,6 +70,7 @@ body{
     border-bottom: solid 2px darkblue;
     width: 85%;
     transition: 300ms;
+    text-transform: lowercase;
 }
 
 #text::placeholder{
