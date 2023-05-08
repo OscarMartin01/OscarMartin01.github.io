@@ -1,0 +1,287 @@
+*{
+    margin: 0;
+    padding: 0;  
+}
+
+@font-face {
+    font-family: Patrick;
+    src: url(fonts/PatrickHand-Regular.ttf);
+}
+
+body{
+    background-color: rgb(229, 229, 229);
+}
+
+#title{
+    text-align: center;
+    font-family: Patrick;
+    font-size: 70px;
+    color: darkblue;
+    padding: 28px;
+}
+
+#container{
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-auto-flow: row dense;
+    grid-template-columns: 1fr 7fr 20%; 
+    grid-template-rows: 1fr 1fr 1fr; 
+    column-gap: 15px;
+    font-family: Patrick;
+    font-size: 20px;
+    height: 650px;
+    
+}
+
+#c1{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    grid-area: 1 / 1 / 4 / 2; 
+}
+
+#c1 :is(#alura,#oracle, #and){
+    width: 99%;
+    filter: invert(8%) sepia(29%) saturate(7500%) hue-rotate(234deg) brightness(84%) contrast(121%);
+}
+#c1 #and{
+    width: 70%;
+    align-items: center;  
+}
+
+#c2{
+    margin-top: 70px;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 10%;
+    grid-area: 1 / 2 / 4 / 3; 
+}
+
+#text{
+    float: left;
+    font-family: Patrick;
+    font-size: 40px;
+    background-color: transparent;
+    border: none;
+    border-bottom: solid 2px darkblue;
+    width: 85%;
+    transition: 300ms;
+}
+
+#text::placeholder{
+    color: darkblue;
+    transition: 300ms;
+}
+
+#text:focus, #crypter:focus{
+    outline: none;
+}
+
+#text:focus::placeholder{
+    color: transparent;
+    transition: 300ms ease;
+}
+
+#c2 p{
+    margin-left: 25px;
+    font-size: 18px;
+}
+
+#c2 #buttons{
+    display: flex;
+    justify-content: space-around;
+}
+
+button{
+    padding: 15px;
+    width: 40%;
+    border-radius: 20px;
+    font-family: Patrick;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: transparent;
+    cursor: pointer;
+}
+button:hover{
+    transform: scale(1.1);
+}
+
+#code{
+    background: darkblue;
+    color: white;
+    border: none;
+}
+#uncode{
+    color: darkblue;
+    border: solid 2px darkblue;
+}
+
+#c3{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-evenly;
+    background-color: azure;
+    border-radius: 10px;
+    padding: 10px;
+    grid-area: 1 / 3 / 4 / 4; 
+    
+}
+#c3 button{
+    margin: 0 auto;
+    width: 90%;
+    display: none;
+}
+
+#c3 #no-msg {
+    font-size: 17px;
+    margin-bottom: 20px;
+}
+
+#c3 #no-msg strong{
+    font-size: 35px;
+}
+
+#crypter{
+    font-size: 25px;
+    display: none;
+    padding: 10px 0;
+    border: none;
+    background: transparent;
+    width: 99%;
+    font-family: Patrick;
+    text-align: center;
+}
+
+footer{
+    font-family: Patrick;
+    font-size: 20px;
+    background: #007fff;
+    margin-top: 15px;
+    height: 100%;
+    padding: 10px;
+}
+
+@media screen and (max-width:1200px) {
+    
+    #title{
+        font-size: 45px;
+    }
+
+    #container{
+        width: 85%;
+        grid-template-rows: 12% auto auto; 
+        row-gap: 35px;
+        height: 100vh;
+    }
+
+    #c1{
+        grid-area: 1 / 1 / 2 / 4;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    #c1 :is(#alura,#oracle){
+        width: 25%;
+    }
+
+    #c1 #and{
+        width: 10%;
+
+    }
+
+    #c2{
+        margin-top: 0px;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        margin-left: 0;
+        margin: 0  auto;
+        width: 80%;
+        grid-area: 2 / 1 / 3 / 4; 
+    }
+
+    #c2 p{
+        margin-left: 12px;
+        font-size: 14px;
+    }
+
+    button{
+        padding: 12px;
+        width: 45%;
+        font-size: 20px;
+        margin-right: 0px;
+        text-align: center;
+    }
+
+    button:hover{
+        transform: none;
+    }
+    
+    #c3{
+        grid-area: 3 / 1 / 4 / 4;
+        height: 300px;
+    }
+    #c3 img{
+        display: none;
+    }
+
+    footer{
+        padding: 20px;
+        margin-top: 0px;
+    }
+
+}
+
+@media screen and (max-width:700px){
+    #title{
+        font-size: 35px;
+    }
+
+    #container{
+        width: 85%;
+        grid-template-rows: 7% 30% 47%; 
+        row-gap: 45px;
+    }
+
+    #c1 :is(#alura,#oracle){
+        width: 20%;
+    }
+
+    #c2{
+        width: 85%;
+        margin-top: 30px;
+        margin-bottom: 40px;
+    }
+
+    #c2 #buttons{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    #c3{
+        height: 200px;
+    }
+
+    #text{
+        font-size: 25px;
+        margin-bottom: 20px;
+    }
+     
+    button{
+        padding: 10px;
+        width: 90%;
+        margin: 5px auto;
+        text-align: center;
+    }
+
+    footer{
+        padding: 20px;
+        margin-top: 60px;
+    }
+}

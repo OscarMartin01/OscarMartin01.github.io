@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" >
+    <meta name="viewport" content="device-width, initial-scale=1.0">
+    <title>Encriptador</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1 id="title">Encriptador de texto</h1>
+    <main id="container">
+        <section id="c1">
+            <img src="images/alura.png" alt="Alura" id="alura">
+            <img src="images/and_fill.png" alt="and" id="and">
+            <img src="images/oracle_icon.png" alt="Alura" id="oracle">
+        </section>
+        <section id="c2">
+            <input id="text" type="text" placeholder="Ingrese texto aqui"/>
+            <div class="crypt-buttons">
+            <p>Solo letras minusculas y sin acentos</p>
+                <div id="buttons">
+                    <button id="code" class="button">Encriptar</button>
+                    <button id="uncode" class="button">Desencriptar</button>
+                </div>
+            </div>
+        </section>
+        <section id="c3">
+            <input type="text" id="crypter" readonly="readonly">
+            <img src="images/encryption.png" alt="Imagen">
+                <p id="no-msg"><strong>Ningún mensaje fue encontrado</strong><br>Ingresa en texto que quieras encriptar o desencriptar</p>
+            <button id="copy_btn">Copiar</button>
+        </section>
+    </main>
+
+    <footer>
+       <p>Hecho por Oscar Martin &copy;</p>  
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
