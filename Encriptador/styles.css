@@ -12,6 +12,11 @@ body{
     background-color: rgb(229, 229, 229);
 }
 
+.clear{
+    float: none;
+    clear: both;
+}
+
 #title{
     text-align: center;
     font-family: Patrick;
@@ -25,7 +30,7 @@ body{
     margin: 0 auto;
     display: grid;
     grid-auto-flow: row dense;
-    grid-template-columns: 1fr 7fr 20%; 
+    grid-template-columns: 1fr 7fr 23%; 
     grid-template-rows: 1fr 1fr 1fr; 
     column-gap: 15px;
     font-family: Patrick;
@@ -52,7 +57,7 @@ body{
 }
 
 #c2{
-    margin-top: 70px;
+    margin-top: 40px;
     height: 70%;
     display: flex;
     flex-direction: column;
@@ -64,13 +69,13 @@ body{
 #text{
     float: left;
     font-family: Patrick;
-    font-size: 40px;
+    font-size: 30px;
     background-color: transparent;
     border: none;
     border-bottom: solid 2px darkblue;
-    width: 85%;
     transition: 300ms;
     text-transform: lowercase;
+    resize: none;
 }
 
 #text::placeholder{
@@ -148,26 +153,28 @@ button:hover{
 }
 
 #crypter{
-    font-size: 25px;
+    font-size: 20px;
     display: none;
     padding: 10px 0;
     border: none;
     background: transparent;
-    width: 99%;
     font-family: Patrick;
     text-align: center;
+    resize: none;
+    width: 100%;
+    height: 200px;
 }
 
 footer{
+    text-align: center;
     font-family: Patrick;
     font-size: 20px;
-    background: #007fff;
     margin-top: 15px;
     height: 100%;
     padding: 10px;
 }
 
-@media screen and (max-width:1200px) {
+@media screen and (max-width:1024px) {
     
     #title{
         font-size: 45px;
@@ -177,7 +184,7 @@ footer{
         width: 85%;
         grid-template-rows: 12% auto auto; 
         row-gap: 35px;
-        height: 100vh;
+        height: 650px;
     }
 
     #c1{
@@ -192,11 +199,14 @@ footer{
 
     #c1 #and{
         width: 10%;
+    }
 
+    #text{
+        margin-top: 20px;
     }
 
     #c2{
-        margin-top: 0px;
+        margin-top: 30px;
         height: auto;
         display: flex;
         flex-direction: column;
@@ -208,8 +218,8 @@ footer{
     }
 
     #c2 p{
-        margin-left: 12px;
-        font-size: 14px;
+        margin-left: 18px;
+        font-size: 16px;
     }
 
     button{
@@ -226,10 +236,16 @@ footer{
     
     #c3{
         grid-area: 3 / 1 / 4 / 4;
-        height: 300px;
+        height: 200px;
     }
     #c3 img{
         display: none;
+    }
+
+    #crypter{
+        font-size: 18px;
+
+        margin: 5px 0 20px 0;
     }
 
     footer{
@@ -245,28 +261,18 @@ footer{
     }
 
     #container{
-        width: 85%;
-        grid-template-rows: 7% 30% 47%; 
-        row-gap: 45px;
+        row-gap: 5px;
     }
 
     #c1 :is(#alura,#oracle){
         width: 20%;
     }
 
-    #c2{
-        width: 85%;
-        margin-top: 30px;
-        margin-bottom: 40px;
-    }
 
     #c2 #buttons{
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-    }
-    #c3{
-        height: 200px;
     }
 
     #text{
@@ -281,8 +287,16 @@ footer{
         text-align: center;
     }
 
+    #c3 #no-msg strong{
+        font-size: 28px;
+    }
+
+    #c3 #no-msg{
+        font-size: 14px;
+    }
+
     footer{
         padding: 20px;
-        margin-top: 60px;
+        margin-top: 10px;
     }
 }

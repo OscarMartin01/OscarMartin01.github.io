@@ -1,4 +1,4 @@
-var input = document.querySelector("input");
+var input = document.querySelector("textarea");
 var code= document.getElementById("code");
 var uncode= document.getElementById("uncode");
 var copiar= document.getElementById("copy_btn");

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="device-width, initial-scale= 1.0">
+        <link rel="icon" href="img/logo.png" type="image/x-icon">
+        <title>Mi portafolio</title>
+        <link rel="stylesheet" href="style.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <span id="inicio"></span>
+        <header>
+            <img src="img/logonombre.png" alt="Logo" class="logo">
+
+            <input type="checkbox" id="check">
+            <label for="check" class="menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" style="fill: rgb(32, 47, 141);"><path d="M4 11h12v2H4zm0-5h16v2H4zm0 12h7.235v-2H4z"></path></svg>
+            </label>
+
+            <nav class="principal">
+                <ul class="contenido">
+                    <li><a class="scrollto" data-link="inicio" id="start">Inicio</a></li>
+                    <li><a class="scrollto" data-link="aboutMe" id="sobreMi">Sobre mí</a></li>
+                    <li><a class="scrollto" data-link="studies" id="estudios">Estudios</a></li>
+                    <li><a class="scrollto" data-link="languages" id="lenguajes">Conocimiento</a></li>
+                    <li><a class="scrollto" data-link="projects" id="proyectos">Proyectos</a></li>
+                    <li><a class="scrollto" data-link="contact" id="cont">Contacto</a></li>
+                </ul>
+            </nav>
+
+        </header>
+
+        <main>
+            <section class="slider">
+
+                <input type="radio" name="images" id="b1" checked>
+                <input type="radio" name="images" id="b2">
+                <input type="radio" name="images" id="b3">
+               
+                <div class="wrapper" id="uno">
+                    <img src="img/banner1.png" alt="Banner" >
+                    <label for="b3" class="ant"></label>
+                    <label for="b2" class="sig"></label>
+                </div>
+                <div class="wrapper" id="dos">
+                    <img src="img/info.png" alt="Banner 1">
+                    <label for="b1" class="ant"></label>
+                    <label for="b3" class="sig"></label>
+                </div>
+                <div class="wrapper" id="tres">
+                    <img src="img/contacto.png" alt="Banner 2">
+                    <label for="b2" class="ant"></label>
+                    <label for="b1" class="sig"></label>
+                </div>
+
+                <div class="navDots">
+                    <label class="dots" id="dot1" for="b1"></label>
+                    <label class="dots" id="dot2" for="b2"></label>
+                    <label class="dots" id="dot3" for="b3"></label>
+                </div>
+
+            </section>
+      
+            <div  id="container">
+                <section class="aboutMe" id="aboutMe">
+                    <img src="img/foto.jpg" alt="Foto" class="picture">
+                    <article class="description">
+                        <h2>¿Quien soy?</h2>
+                        <h3>Mi nombre es Oscar Martin</h3>
+                        <p>Soy programador e ingeniero electrónico, me considero una persona con habilidades como innovación, creatividad, trabajo en equipo, y disposición al aprendizaje para cumplir los objetivos a realizar.</p>
+                    </article>
+                </section>
+                <section class="studies" id="studies">
+                    <h2 class="title">Mis estudios</h2>
+                    <div id="years">
+                        <img src="img/2018.png" alt="2018" class="year" onmouseover="infoIn1()" onmouseout="infoOut()">
+                        <img src="img/2021.png" alt="2021" class="year" onmouseover="infoIn2()" onmouseout="infoOut()">
+                        <img src="img/2022.png" alt="2022" class="year" onmouseover="infoIn3()" onmouseout="infoOut()"> 
+                    </div>
+                    <p id="descStudy"></p>
+
+                    <div class="years-mini">
+                        <img src="img/2018.png" alt="2018" class="year" >
+                        <p class="degree">Universidad Cooperativa de Colombia <br> Ingeniería Electrónica</p>
+                        <img src="img/2021.png" alt="2021" class="year" >
+                        <p class="degree">Udemy <br>Máster en JavaScript: Aprender JS, jQuery, Angular, NodeJS</p>
+                        <img src="img/2022.png" alt="2022" class="year" > 
+                        <p class="degree">EUniversidad Nacional de Colombia y MINTIC <br>Diplomado Ciclo 2 (Java y MySQL)</p>
+                    </div>
+                </section>
+                <section class="languages" id="languages">
+                    <h2 class="title">Tengo conocimiento en...</h2>
+                    <div class="langs">
+                        <figure>
+                            <img src="icons/html5.svg" alt="HTML5" class="icons">
+                            <figcaption>HTML5</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="icons/css3.svg" alt="CSS3" class="icons">
+                            <figcaption>CSS3</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="icons/javascript.svg" alt="JavaScript" class="icons">
+                            <figcaption>JavaScript</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="icons/java.svg" alt="Java" class="icons">
+                            <figcaption>Java</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="icons/angular.svg" alt="Angular" class="icons">
+                            <figcaption>Angular</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="icons/mongodb.svg" alt="MongoDB" class="icons">
+                            <figcaption>MongoDB</figcaption>
+                        </figure>
+                        <figure id="c7">
+                            <img src="icons/mysql.svg" alt="MySQL" class="icons" >
+                            <figcaption>MySQL</figcaption>
+                        </figure>
+                    </div>
+                </section>
+                <section class="projects" id="projects">
+                    <h2 class="title">Mis proyectos</h2>
+                    <h2 class="subtitle">Paginas web</h2>
+                    <div class="websites">
+
+                    </div>
+                    <h2 class="subtitle">Otros proyectos</h2>
+                    <h3>Java</h3>
+                    <div class="otherProyects">
+
+                    </div>
+                </section>
+                <section class="contact" id="contact">
+                    <h2 class="title">Contacto</h2>
+                    <p class="text">Pueden visitarme y/o contactarme a través los siguientes links:</p>
+                    <div class="social">
+                        <figure>
+                            <img src="icons/facebook.svg" alt="Facebook">
+                            <figcaption><a href="https://www.facebook.com/omartin01/">Facebook</a></figcaption>
+                        </figure>
+                        <figure>
+                            <img src="icons/linkedin.svg" alt="LinkedIn">
+                            <figcaption><a href="https://www.linkedin.com/in/oscarmartin01/">Linkedin</a></figcaption>
+                        </figure>
+                        <figure id="git">
+                            <img src="icons/github.svg" alt="Github" id="s-g3">
+                            <figcaption><a href="https://github.com/OscarMartin01">Github</a></figcaption>
+                        </figure>
+                    </div>
+                    <p class="text">A continuación estará mi hoja de vida para que la puedan descargar.</p>
+                    <a href="cv/Oscar Martin.pdf" download> <button class="download"><img class="save" src="icons/download_line.png" alt="Descargar"> Descargar hoja de vida</button></a>
+                </section>
+
+        </main>
+        <footer>
+            <img src="img/logoCompleto.png" alt="Logo completo" class="bottomImg">
+            <p class="copy">Oscar Martin <br>&copy; Todos los derechos reservados</p>
+        </footer>
+        <script src="main.js"></script>
+    </body>
+
+
+</html>

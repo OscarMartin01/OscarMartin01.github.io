@@ -1,0 +1,900 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+}
+
+body{
+    scroll-behavior: smooth;
+    background: linear-gradient(rgba(15,15,15,0.5), rgba(15,15,15,0.5)), url(img/blue-tech.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+
+.clear{
+    clear: both;
+    float: none;
+}
+
+@font-face {
+    font-family: Courgette;
+    src: url(font/Courgette-Regular.ttf);
+}
+@font-face {
+    font-family: Itim;
+    src: url(font/Itim-Regular.ttf);
+}
+
+/*-----------------HEADER Y NAV-------------------*/
+header{
+    position: sticky;
+    top: 0;
+    background: linear-gradient(to left, #4ca1af, #c4e0e5);
+    z-index: 3;
+}
+
+.logo{
+    margin-left: 80px;
+    width: 140px;
+    padding: 8px 0 0 0;
+}
+
+.principal {
+    position: absolute;
+    top: 50%;
+    right: 7%;
+    transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    font-family: Itim;
+    
+}
+
+.principal li{
+    list-style: none;
+    float: left;
+    padding: 30px 15px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 500ms;
+}
+
+.principal li a{
+    text-decoration: none;
+    color: rgb(255, 255, 231);
+}
+
+.principal li:hover{
+    transform: scale(1.2);
+}
+
+#check, .menu{
+    display: none;
+}
+
+/*--------------------BANNER------------------------*/
+
+.slider{
+    position: relative;
+    width: 100%;
+    padding-bottom: 40%;
+    height: 0;
+    margin: 0 auto;
+    background: lightblue ;
+    border-bottom: 1px solid;
+}
+
+.wrapper{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.wrapper img{
+    width: 100%;
+    height: 100%; 
+}
+
+#b1,#b2,#b3{
+    display: none;
+}
+
+.sig, .ant{
+    width: 13%;
+    height: 16%;
+    position: absolute;
+    bottom: -5%;
+    transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    z-index: 99;
+    cursor: pointer;
+    background-size:contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.5;
+    transition: 500ms;
+}
+
+.navDots{
+    width: 100%;
+    height: 11px;
+    bottom: 12px;
+    position: absolute;
+    text-align: center;
+    z-index: 1;
+}
+
+.dots{
+    top: -5px;
+    width: 15px;
+    height: 15px;
+    margin: 0 4px;
+    position: relative;
+    border-radius: 50%;
+    display: inline-block;
+    background: rgba(88, 88, 88, 0.4);
+}
+
+#b1:checked~ #uno, #b2:checked~ #dos, #b3:checked~ #tres{
+    z-index: 1;
+}
+
+#b1:checked~ .navDots #dot1, #b2:checked~ .navDots #dot2, #b3:checked~ .navDots #dot3{
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.ant{
+    left: 1%;
+    background-image: url(icons/arrow_left.png);
+}
+
+.sig{
+    right: 1%;
+    background-image: url(icons/arrow_right.png);   
+}
+
+.ant:hover, .sig:hover{
+    opacity: 1;
+}
+/*--------------------CONTAINER------------------------*/
+
+#container{
+    width: 80%;
+    margin: 0 auto;
+    font-family: Courgette;
+    color: #FFFFFF;
+}
+
+/*--------------------SOBRE MÍ------------------------*/
+
+.aboutMe{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-column-gap: 35px;
+    align-items: center; 
+    text-align: justify;
+    padding:  20px;
+    margin-top: 20px;
+}
+
+.picture{
+    border-radius: 100px;
+    width: 150px; 
+}
+
+.description{
+    font-size: 20px;
+}
+
+
+/*--------------------ESTUDIOS------------------------*/
+
+
+.title{
+    padding: 20px;
+    text-align: center;
+    font-size: 60px;
+}
+
+.studies{
+    position: relative;
+}
+
+#years, .langs{
+    display: grid;
+    grid-template-columns: auto auto auto; 
+    justify-content:space-around;
+    padding: 5px;
+    cursor: pointer;
+}
+
+ #years{
+    height: 250px;
+ }
+
+.year{
+    width: 150px;
+    position: relative;
+    margin: 0 auto;
+    transition: 300ms;
+    padding: 5px;
+    border-radius: 50%;
+}
+
+.year:hover{
+    transform: scale(1.15) rotateZ(360deg);
+    filter: invert(10%) sepia(10%) saturate(700%) hue-rotate(0deg) brightness(110%) contrast(100%);
+}
+
+
+#descStudy{
+    width: 500px;
+    padding: 20px 0 0 0;
+    text-align: center;
+    font-size: 22px;
+    position: absolute;
+    top: 87%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+
+.years-mini{
+    display: none;
+}
+
+/*--------------------CONOCIMIENTOS------------------------*/
+
+figure{
+    padding: 18px;
+}
+
+.icons{
+    width: 130px;
+    filter: invert(85%) sepia(50%) saturate(60%) hue-rotate(95deg) brightness(96%) contrast(96%);
+}
+
+#c7{
+    grid-area: 3/2;
+}
+
+.languages figcaption{
+    text-align: center;
+    font-family: Itim;
+    font-size: 22px;
+}
+.langs{
+    cursor: auto;
+}
+
+/*--------------------PROYECTOS------------------------*/
+
+.subtitle{
+    text-align: center;
+    padding: 10px;
+    font-size: 28px;
+}
+
+.websites{
+    display: grid;
+    grid-template-columns: auto ;
+    column-gap: 10px;
+    justify-content: space-around;
+}
+.otherProyects{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    column-gap: 10px;
+    justify-content: space-around;
+}
+
+.item, .item2{
+    padding: 20px 10px;
+}
+.item img, .item2 img{
+    width: 250px;
+    border-radius: 10px;
+    transition: 500ms;
+}
+
+.projects h3{
+    font-size:20px;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.name, .name2{
+    text-align: center;
+    padding: 10px;
+    font-size:22px;
+}
+
+.link, .git{
+    display: inline-block;
+    width: 80px;
+    text-align: center;
+    background: linear-gradient(to right, #56ccf2, #2f80ed);;
+    padding: 7px;
+    margin-left: 20px;
+    border-radius: 5px;
+    transition: .4s ease-in;
+}
+
+.git{
+    background: linear-gradient(to right, #0575e6, #021b79);;
+}
+
+.link a, .git a, .git2 a{
+    text-decoration: none;
+    color: white;
+}
+
+.item2{
+    text-align: center;
+}
+
+.git2{
+    background: linear-gradient(to right, #0575e6, #021b79);;
+    padding: 7px;
+    width: 80px;
+    margin: 0 auto;
+    border-radius: 5px;
+    transition: .4s ease-in;
+}
+
+.link:hover{
+    transform: scale(1.2);
+    box-shadow: inset 6em 0 0 0 #05cbfF;
+}
+
+.link:hover a, .git:hover a{
+    transition: .6s ease-in;
+}
+
+.git:hover, .git2:hover{
+    transform: scale(1.2);
+    box-shadow: inset 6em 0 0 0 #a8a8a8;
+    color: #3e3e3e;
+}
+
+/*--------------------CONTACTO------------------------*/
+.contact{
+    background: rgba(240,240,255,0.5);
+    margin: 0px -12.5% auto;
+    padding:  10px 40px 40px;
+}
+
+
+.social{
+    display: grid;
+    grid-template-columns: auto auto auto; 
+    justify-content:space-around;
+    align-items: center;
+    padding: 20px 0px;
+}
+
+.social figure{
+    transition: 500ms;
+}
+.social figure img{
+    margin: 0 auto;
+    transition: 300ms;
+    border-radius: 20%;
+}
+
+.social figcaption{
+    text-align: center;
+    font-family: Itim;
+}
+
+#s-g3{
+    width: 70px;
+}
+
+.social figure:hover{
+    transform: scale(1.3);
+    filter: invert(23%) sepia(94%) saturate(1968%) hue-rotate(197deg) brightness(95%) contrast(92%);
+    
+}
+
+#git:hover{
+    filter: invert(30%) sepia(90%) saturate(3%) hue-rotate(61deg) brightness(96%) contrast(96%) ;    
+   }
+
+.social a{
+    text-decoration: none;
+    color: black;
+}
+
+.text{
+    font-size: 20px;
+    text-align: center;
+}
+
+.download{
+    transition: 800ms;
+    margin: 10px auto 0;
+    width: 50%;
+    padding: 15px;
+    border-radius: 10px;
+    box-sizing:border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Itim;
+    background: linear-gradient(to top, #56ccf2, #2f80ed);
+    border: none;
+    cursor: pointer;
+}
+
+a{
+    text-decoration: none;
+}
+
+a .download{
+    color: white;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+}
+
+.download:hover{
+    transform: scale(1.1);
+    box-shadow: inset 33em 0 0 0 #F20593;
+}
+
+.save{
+    width: 40px;
+    margin-right: 20px;
+}
+
+/*--------------------FOOTER------------------------*/
+
+footer{
+    background: linear-gradient(to left, #83a4d4, #b6fbff);
+    text-align: center;
+    font-family: itim;
+    
+}
+.bottomImg{
+    padding: 15px 0px 0px;
+    width: 250px;
+}
+
+.copy{
+    font-size: 15px;
+    padding: 7px 0 30px 0;
+}
+
+@media screen and (max-width: 1024px){
+
+    /*-----------------HEADER Y NAV-------------------*/
+
+    .logo{
+        margin-left: 60px;
+    }
+
+    .principal{
+        right: 4%;
+    }
+
+    .principal li{
+        list-style: none;
+        float: left;
+        padding: 30px 8px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: 500ms;
+    }
+
+    .principal li a{
+        text-decoration: none;
+        color: rgb(255, 255, 231);
+    }
+
+    .principal li:hover{
+        transform: scale(1);
+    }
+
+    /*--------------------BANNER------------------------*/
+    
+    .sig, .ant{
+        opacity: 0.9;
+    }
+    
+    
+    .dots{
+        top: 2px;
+        width: 10px;
+        height: 10px;
+        margin: 0 2px;
+    }
+    
+    #b1:checked~ #uno, #b2:checked~ #dos, #b3:checked~ #tres{
+        z-index: 1;
+    }
+    
+    #b1:checked~ .navDots #dot1, #b2:checked~ .navDots #dot2, #b3:checked~ .navDots #dot3{
+        background: rgba(0, 0, 0, 0.6);
+    }
+    
+    
+    .ant:hover, .sig:hover{
+        opacity: 1;
+    }
+    
+    /*--------------------ESTUDIOS------------------------*/
+    #years, #descStudy{
+        display: none;
+    }
+
+    .title{
+        font-size: 45px;
+    }
+
+    .years-mini{
+        display: flex;
+        flex-flow: column;
+        margin: 0 auto;
+        align-items: center;
+    }
+
+    .years-mini p{
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .year{
+        width: 150px;
+        position: none;
+        padding: 5px;
+        border-radius: 50%;
+        transition: 0ms;
+    }
+    
+    .year:hover{
+        transform: scale(1) rotateZ(0deg);
+        filter: none;
+    }
+
+    /*--------------------CONOCIMIENTOS------------------------*/
+
+    figure{
+        padding: 18px;
+    }
+
+    #c7{
+        grid-area: 3/2;
+    }
+
+    .languages figcaption{
+        text-align: center;
+        font-family: Itim;
+        font-size: 18px;
+    }
+    .langs{
+        cursor: auto;
+    }
+
+    /*--------------------PROYECTOS------------------------*/
+
+    .subtitle{
+        text-align: center;
+        padding: 10px;
+        font-size: 25px;
+    }
+
+    .websites, .otherProyects{
+        column-gap: 5px;
+        justify-content: space-around;
+    }
+    
+
+    .item, .item2{
+        padding: 20px 5px;
+    }
+
+    .item img, .item2 img{
+        width: 210px;
+    }
+
+    .name, .name2{
+        text-align: center;
+        padding: 10px;
+        font-size: 18px;
+    }
+
+    .link{
+        margin-left: 0;
+    }
+
+    .link:hover, .git:hover, .git2:hover{
+        transform: scale(1);
+        box-shadow: none;
+    }
+
+    /*--------------------CONTACTO------------------------*/
+    .contact{
+        background: rgba(240,240,255,0.6);
+        padding:  10px 40px 40px;
+    }
+
+    .social figure:nth-child(1), .social figure:nth-child(2){
+        filter: invert(23%) sepia(94%) saturate(1968%) hue-rotate(197deg) brightness(95%) contrast(92%);
+    }
+
+    .social figure:nth-child(3){
+        filter: invert(30%) sepia(90%) saturate(3%) hue-rotate(61deg) brightness(56%) contrast(96%) ;    
+    }
+
+    #s-g3{
+        width: 70px;
+    }
+
+    .social figure:hover{
+        transform: scale(1);
+    }
+
+    #git:hover{
+        filter: invert(30%) sepia(90%) saturate(3%) hue-rotate(61deg) brightness(56%) contrast(96%) ;    
+    }
+
+    .social a{
+        text-decoration: none;
+        color: #3e3e3e;
+    }
+
+    .text{
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .download{
+        margin: 5px auto 0;
+        width: 70%;
+        padding: 10px;
+        font-size: 20px;
+    }
+
+    .download:hover{
+        transform: scale(1);
+        box-shadow: none;
+    }
+
+    .save{
+        width: 35px;
+        margin-right: 20px;
+    }
+
+/*--------------------FOOTER------------------------*/
+
+    footer{
+        background: linear-gradient(to left, #83a4d4, #b6fbff);
+        text-align: center;
+        font-family: itim;
+        
+    }
+    .bottomImg{
+        padding: 15px 0px 0px;
+        width: 250px;
+    }
+
+    .copy{
+        font-size: 15px;
+        padding: 7px 0 30px 0;
+    }
+
+    /*--------------------FOOTER------------------------*/
+
+    .bottomImg{
+        width: 180px;
+    }
+
+    .copy{
+        font-size: 12px;
+        padding: 7px 0 30px 0;
+    }
+
+}
+
+@media screen and (max-width: 768px){
+
+    .logo{
+        position: relative;
+        left: 50%;
+        transform: translate(-50%, 0);
+        margin-left: 0px;
+    }
+
+    .menu{
+        display: block;
+        position: absolute;
+        top: 5px;
+        left: 30px;
+        z-index: 1;
+    }
+
+    .principal {
+        position: absolute; 
+        left: 0;
+        top: 45px;
+        transform: translate(0, 0%);
+        -ms-transform: translate(0, 0%);
+        font-family: Itim;
+        background: rgba(0, 0, 0, 0.8);
+        width: 100%;
+        height: 100vh;
+        transform: translateX(-100%);
+        transition: all 500ms ease-out;
+    }
+
+    .contenido{
+        position: relative;
+        margin: 0px auto;
+        top: 10px;
+        width: 60%;
+        text-align: center;
+    }
+    
+    .contenido li{
+        list-style: none;
+        float: none;
+        font-size: 22px;
+        padding: 10px 0px;
+        cursor: default; 
+        border-bottom: #56ccf2 2px solid;
+    }
+    
+    .principal li a{
+        text-decoration: none;
+        color: rgb(255, 255, 231);
+    }
+    
+    .principal li a{
+        text-decoration: none;
+        color: rgb(255, 255, 231);
+    }
+
+    #check:checked ~ .principal{
+        visibility: visible;
+        transform: translateY(0%);
+        transition: all 500ms ease-in;
+    }
+
+    .sig, .ant{
+        opacity: 1;
+        width: 19%;
+        height: 21%;
+        bottom: -10px;
+        box-sizing: content-box;
+    }
+
+    /*--------------------SOBRE MÍ------------------------*/
+
+    .aboutMe{
+        display: inline-block;
+        grid-column-gap: 35px;
+        align-items: center; 
+        text-align: justify;
+        margin: 30px auto 10px auto;
+        padding: 0px 0 0 0;
+    }
+
+    .picture{
+        display: block;
+        border-radius: 100px;
+        width: 130px; 
+        margin: 0px auto;
+    }
+
+    .description{
+        font-size: 18px;
+    }
+    .description h2, .description h3{
+        text-align: center;
+    }
+
+     /*--------------------CONOCIMIENTOS------------------------*/
+
+    .langs{
+        grid-template-columns: auto auto;
+    }
+
+    .icons{
+        width: 100px;
+    }
+
+    /*--------------------ESTUDIOS------------------------*/
+
+    .title{
+        padding: 15px;
+        text-align: center;
+        font-size: 30px;
+    }
+
+    .years-mini p{
+        font-size: 18px;
+        text-align: center;
+    }
+
+    /*--------------------PROYECTOS------------------------*/
+
+    .websites, .otherProyects{
+        grid-template-columns: auto auto;
+        column-gap: 5px;
+        justify-content: space-around;
+    }
+
+    .item img, .item2 img{
+        width: 190px;
+        display: flex;
+        margin: 0 auto  ;
+    }
+
+    a .download{
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 430px){
+
+    /*--------------------HEADER Y NAV------------------------*/
+
+    .menu{
+        left: 15px;
+    }
+
+    .langs{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .year{
+        width: 130px;
+    }
+
+    .years-mini p{
+        font-size: 15px;
+        text-align: center;
+    }
+
+    /*--------------------PROYECTOS------------------------*/
+
+    .websites, .otherProyects{
+        grid-template-columns: auto;
+        column-gap: 5px;
+        justify-content: space-around;
+    }
+
+    .item img, .item2 img{
+        width: 190px;
+    }
+
+    .git{
+        margin-left: 4px;
+    }
+
+    .social{
+        display: flex;
+        flex-direction: column;
+    }
+
+    a .download{
+        font-size: 15px;
+    }
+
+    .save {
+        margin-right: 5px;
+    }
+
+    /*--------------------FOOTER------------------------*/
+
+    .bottomImg{
+        width: 150px;
+    }
+
+    .copy{
+        font-size: 12px;
+        padding: 7px 0 30px 0;
+    }
+}
