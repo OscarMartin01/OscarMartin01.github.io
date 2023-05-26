@@ -105,7 +105,7 @@ var website=[
     var links= document.querySelectorAll(".scrollto");
     links.forEach((item)=>{
         item.addEventListener("click",()=>{
-            const yOffset = -50; 
+            const yOffset = -45; 
             const scrollanimado= document.getElementById(item.getAttribute("data-link"));
             const y = scrollanimado.getBoundingClientRect().top + window.pageYOffset + yOffset;
             window.scrollTo({top: y, behavior: 'smooth'});

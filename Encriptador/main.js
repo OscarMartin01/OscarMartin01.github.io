@@ -26,15 +26,21 @@ function ocultar(){
 }
 
 function coding(){
-
+        if(input.value.includes('á') || input.value.includes('é') || input.value.includes('í') || input.value.includes('ó') || input.value.includes('ú') || input.value.includes('ü')){
+            alert("Su texto tiene letras acentuadas, por favor retirarlas");
+        }else{
         result = input.value.replace(/e/g, "enter").replace(/i/g, "imes").replace(/a/g, "ai").replace(/o/g, "ober").replace(/u/g, "ufat");
         mostrar();
+        }
 }
 
 function uncoding(){
-
+    if(input.value.includes('á') || input.value.includes('é') || input.value.includes('í') || input.value.includes('ó') || input.value.includes('ú') || input.value.includes('ü')){
+        alert("Su texto tiene letras acentuadas")
+    }else{
         result = input.value.replace(/enter/g, "e").replace(/imes/g, "i").replace(/ai/g, "a").replace(/ober/g, "o").replace(/ufat/g, "u");
         mostrar();
+    }
 }
 
 function copy() {
