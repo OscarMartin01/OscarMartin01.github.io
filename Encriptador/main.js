@@ -25,9 +25,25 @@ function ocultar(){
     document.getElementById("copy_btn").style.display="none";
 }
 
+function alerta(){
+    Swal.fire({
+        icon: 'error',
+        title: 'Su texto tiene letras acentuadas',
+        text: 'Por favor retirarlas e intente de nuevo',
+        showConfirmButton: false,
+        timer: 2000,
+        backdrop: `
+            rgba(255,0,0,0.08)
+        `,
+        customClass: {
+            validationMessage: 'swal2title'
+        }
+    });
+}
+
 function coding(){
         if(input.value.includes('á') || input.value.includes('é') || input.value.includes('í') || input.value.includes('ó') || input.value.includes('ú') || input.value.includes('ü')){
-            alert("Su texto tiene letras acentuadas, por favor retirarlas");
+        alerta();
         }else{
         result = input.value.replace(/e/g, "enter").replace(/i/g, "imes").replace(/a/g, "ai").replace(/o/g, "ober").replace(/u/g, "ufat");
         mostrar();
@@ -36,7 +52,7 @@ function coding(){
 
 function uncoding(){
     if(input.value.includes('á') || input.value.includes('é') || input.value.includes('í') || input.value.includes('ó') || input.value.includes('ú') || input.value.includes('ü')){
-        alert("Su texto tiene letras acentuadas, por favor retirarlas");
+        alerta();
     }else{
         result = input.value.replace(/enter/g, "e").replace(/imes/g, "i").replace(/ai/g, "a").replace(/ober/g, "o").replace(/ufat/g, "u");
         mostrar();
@@ -48,6 +64,18 @@ function copy() {
     copyText.select();
     copyText.setSelectionRange(0,99999);
     document.execCommand("copy");
+    Swal.fire({
+        icon: 'success',
+        title: 'Texto copiado',
+        showConfirmButton: false,
+        timer: 1500,
+        backdrop: `
+            rgba(0,255,0,0.06)
+        `,
+        customClass: {
+            validationMessage: 'swal2title'
+          }
+      })
   }
   
   
