@@ -36,7 +36,7 @@ function coding(){
 
 function uncoding(){
     if(input.value.includes('á') || input.value.includes('é') || input.value.includes('í') || input.value.includes('ó') || input.value.includes('ú') || input.value.includes('ü')){
-        alert("Su texto tiene letras acentuadas")
+        alert("Su texto tiene letras acentuadas, por favor retirarlas");
     }else{
         result = input.value.replace(/enter/g, "e").replace(/imes/g, "i").replace(/ai/g, "a").replace(/ober/g, "o").replace(/ufat/g, "u");
         mostrar();
