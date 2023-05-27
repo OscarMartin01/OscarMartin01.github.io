@@ -31,12 +31,13 @@ function alerta(){
         title: 'Su texto tiene letras acentuadas',
         text: 'Por favor retirarlas e intente de nuevo',
         showConfirmButton: false,
-        timer: 2000,
+        timer: 1500,
         backdrop: `
             rgba(255,0,0,0.08)
         `,
         customClass: {
-            validationMessage: 'swal2title'
+            title: 'title',
+            htmlContainer: 'swal2body',
         }
     });
 }
@@ -69,11 +70,12 @@ function copy() {
         title: 'Texto copiado',
         showConfirmButton: false,
         timer: 1500,
+        width: 250,
         backdrop: `
             rgba(0,255,0,0.06)
         `,
         customClass: {
-            validationMessage: 'swal2title'
+            title: 'swal2titlecopy'
           }
       })
   }

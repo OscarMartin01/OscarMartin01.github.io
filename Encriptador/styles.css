@@ -18,14 +18,21 @@ body{
     clear: both;
 }
 
-.swal2-title{
-    color: #4300fb !important;
+.title{
+    color: #ff0000 !important;
 }
 
+.swal2body{
+    color: palevioletred !important;
+}
+
+.swal2titlecopy{
+    color: green !important;
+    font-size: 23px !important;
+}
 
 #title{
     text-align: center;
-
     font-size: 70px;
     color: darkblue;
     padding: 28px;
