@@ -4,9 +4,12 @@
     box-sizing: content-box;
 }
 
-body{
+html{
     scroll-behavior: smooth;
-    background: linear-gradient(rgba(15,15,15,0.5), rgba(15,15,15,0.5)), url(img/blue-tech.jpg) no-repeat center center fixed;
+}
+
+body{
+    background-color: #1e293b;
     background-size: cover;
 }
 
@@ -16,26 +19,30 @@ body{
 }
 
 @font-face {
-    font-family: Courgette;
-    src: url(font/Courgette-Regular.ttf);
+    font-family: Duru-Sans;
+    src: url(font/DuruSans-Regular.ttf);
 }
 @font-face {
     font-family: Itim;
     src: url(font/Itim-Regular.ttf);
+}
+@font-face {
+    font-family: Rubik;
+    src: url(font/static/Rubik-Black.ttf);
 }
 
 /*-----------------HEADER Y NAV-------------------*/
 header{
     position: sticky;
     top: 0;
-    background: linear-gradient(to left, #4ca1af, #c4e0e5);
+    background: linear-gradient(to left, #006fff, #e1ffff);
     z-index: 3;
 }
 
 .logo{
     margin-left: 80px;
     width: 140px;
-    padding: 8px 0 0 0;
+    padding: 12px 0 5px 0;
 }
 
 .principal {
@@ -51,7 +58,7 @@ header{
 .principal li{
     list-style: none;
     float: left;
-    padding: 30px 15px;
+    padding: 0px 15px;
     cursor: pointer;
     font-size: 18px;
     transition: 500ms;
@@ -71,109 +78,142 @@ header{
 }
 
 /*--------------------BANNER------------------------*/
-
 .slider{
     position: relative;
     width: 100%;
-    padding-bottom: 40%;
-    height: 0;
+
+}
+.banner{
+    width: 100%;
     margin: 0 auto;
-    background: lightblue ;
-    border-bottom: 1px solid;
+    height: calc(100vh - 50px);
+    filter: brightness(0.5);
 }
 
-.wrapper{
+.slider .intro{
     position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-}
+    height: calc(100vh - 50px);
+    display: flex;
+    top:0;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%; 
+    }
 
-.wrapper img{
-    width: 100%;
-    height: 100%; 
-}
-
-#b1,#b2,#b3{
-    display: none;
-}
-
-.sig, .ant{
-    width: 13%;
-    height: 16%;
-    position: absolute;
-    bottom: -5%;
-    transform: translate(0, -50%);
-    -ms-transform: translate(0, -50%);
-    z-index: 99;
-    cursor: pointer;
-    background-size:contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0.5;
-    transition: 500ms;
-}
-
-.navDots{
-    width: 100%;
-    height: 11px;
-    bottom: 12px;
-    position: absolute;
+.intro p{
+    font-family: Rubik;
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: bold;
     text-align: center;
-    z-index: 1;
+    padding: 0 30px;
 }
 
-.dots{
-    top: -5px;
-    width: 15px;
-    height: 15px;
-    margin: 0 4px;
-    position: relative;
-    border-radius: 50%;
+.intro p:first-child{
+ font-size: 80px;
+}
+
+.intro p img{
+    width:120px;
+    height:auto;
+    margin-bottom: -17px;
+    margin-right: -17px;
+}
+
+.buttonDownload {
     display: inline-block;
-    background: rgba(88, 88, 88, 0.4);
-}
-
-#b1:checked~ #uno, #b2:checked~ #dos, #b3:checked~ #tres{
-    z-index: 1;
-}
-
-#b1:checked~ .navDots #dot1, #b2:checked~ .navDots #dot2, #b3:checked~ .navDots #dot3{
-    background: rgba(0, 0, 0, 0.6);
-}
-
-.ant{
-    left: 1%;
-    background-image: url(icons/arrow_left.png);
-}
-
-.sig{
-    right: 1%;
-    background-image: url(icons/arrow_right.png);   
-}
-
-.ant:hover, .sig:hover{
-    opacity: 1;
-}
+    position: relative;
+    padding: 20px 40px;
+    background-color: #4CC7F3;
+    color: white;
+    font-family: Duru-sans;
+    text-decoration: none;
+    font-size: 30px;
+    text-align: center;
+    text-indent: 20px;
+    border: none;
+    border-radius: 20px;
+    transition: 500ms;
+    cursor: pointer;
+   }
+   
+   .buttonDownload:hover {
+    background-color: #45e202;
+    color: white;
+    transform: scale(1.2);
+   }
+   
+   .buttonDownload:before, .buttonDownload:after {
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 15px;
+    top: 52%;
+   }
+   
+   .buttonDownload:after {
+    width: 0;
+    height: 0;
+    margin-left: 12px;
+    margin-right: 20px;
+    margin-top: -7px;
+    border-style: solid;
+    border-width: 12px 12px 0px 12px;
+    border-color: transparent;
+    border-top-color: inherit;
+    animation: downloadArrow 0.8s linear infinite;
+    animation-play-state: paused;
+   }
+   
+   .buttonDownload:hover:after {
+    animation-play-state: running;
+   }
+   
+   @keyframes downloadArrow {
+    0% {
+     margin-top: -7px;
+     opacity: 1;
+    }
+   
+    0.001% {
+     margin-top: -25px;
+     opacity: 0.4;
+    }
+   
+    50% {
+     opacity: 1;
+    }
+   
+    100% {
+     margin-top: 12px;
+     opacity: 0.4;
+    }
+   }
 /*--------------------CONTAINER------------------------*/
 
-#container{
-    width: 80%;
+.container{
     margin: 0 auto;
-    font-family: Courgette;
-    color: #FFFFFF;
+    font-family: Duru-Sans;
+    color: #FFFFFF; 
 }
 
+section{
+    width: 80%;
+    margin: 0px auto;
+}
 /*--------------------SOBRE MÍ------------------------*/
 
 .aboutMe{
     display: grid;
     grid-template-columns: auto auto;
     grid-column-gap: 35px;
-    align-items: center; 
+    justify-content: center; 
+    align-content: center;
     text-align: justify;
     padding:  20px 0 0 0;
-    margin-top: 20px;
+    margin: 0px auto 0px;
+    padding: 6vh 0;
 }
 
 .picture{
@@ -183,91 +223,144 @@ header{
 }
 
 .description{
-    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: 25px;
+}
+
+.description h2{
+    font-family: Rubik;
 }
 
 
 /*--------------------ESTUDIOS------------------------*/
 
+.card {
+    width: 280px;
+    height: 170px;
+    perspective: 1000px;
+    margin: 0 auto;
+}
+  
+  .card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+    
+  }
+  
+  .card:hover .card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+  }
+  
+  .card-front {
+    background-color: #1e90ff;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 10px solid #1e90ff;
+    border-radius: 10px;
+    font-size: 30px;
+    transform: rotateY(0deg);
+    box-shadow: 0.1em 0.05em 0.3em #1e90ff;
+  }
+  
+  .card-back {
+    background-color: #45cc52;
+    color: #fff;
+    display: flex;
+    align-items:flex-start;
+    border: 10px solid #45cc52;
+    border-radius: 10px;
+    justify-content: center;
+    font-size: 17px;
+    text-align: center;
+    transform: rotateY(180deg);
+    align-items: center;
+    margin-left: -20px;
+    box-shadow: 0.1em 0.05em 1.2em #45cc52;
+  }
+
+  .card-back strong{
+    font-size: 18px;
+  }
+
+  .card-front .msg{
+    font-size: 13px;
+  }
+  
 
 .title{
     padding: 20px;
     text-align: center;
     font-size: 60px;
+    font-family: Rubik;
 }
 
 .studies{
     position: relative;
+    padding: 4vh 0;
 }
 
-#years, .langs{
+.education{
     display: grid;
-    grid-template-columns: auto auto auto; 
-    justify-content:space-around;
-    padding: 5px;
-    cursor: pointer;
+    grid-template-columns: repeat( 
+        auto-fill,
+        minmax(280px, 2fr)
+    );
+    gap: 32px;
 }
 
- #years{
-    height: 250px;
- }
-
-.year{
-    width: 150px;
-    position: relative;
-    margin: 0 auto;
-    transition: 300ms;
-    padding: 5px;
-    border-radius: 50%;
-}
-
-.year:hover{
-    transform: scale(1.15) rotateZ(360deg);
-    filter: invert(10%) sepia(10%) saturate(700%) hue-rotate(0deg) brightness(110%) contrast(100%);
-}
-
-
-#descStudy{
-    width: 500px;
-    padding: 20px 0 0 0;
-    text-align: center;
-    font-size: 22px;
-    position: absolute;
-    top: 87%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-}
-
-.years-mini{
+.education_mini{
     display: none;
 }
 
 /*--------------------CONOCIMIENTOS------------------------*/
+.languages{
+    padding: 4vh 0;
+}
+
+.langs{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    justify-content: center;
+    gap: 32px;
+}
 
 figure{
-    padding: 18px;
+    padding: 10px;
+    text-align: center;
 }
 
 .icons{
-    width: 130px;
+    width: 100px;
     filter: invert(85%) sepia(50%) saturate(60%) hue-rotate(95deg) brightness(96%) contrast(96%);
 }
 
-#c7{
-    grid-area: 3/2;
-}
-
 .languages figcaption{
-    text-align: center;
     font-family: Itim;
     font-size: 22px;
-}
-.langs{
-    cursor: auto;
+    text-align: center;
 }
 
 /*--------------------PROYECTOS------------------------*/
+
+.projects{
+    padding: 4vh 0;
+}
 
 .subtitle{
     text-align: center;
@@ -275,22 +368,27 @@ figure{
     font-size: 28px;
 }
 
-.websites{
+.websites, .otherProyects{
     display: grid;
-    grid-template-columns: auto ;
-    column-gap: 10px;
-    justify-content: space-around;
-}
-.otherProyects{
-    display: grid;
-    grid-template-columns: auto auto auto;
-    column-gap: 10px;
-    justify-content: space-around;
+    grid-template-columns: repeat( 
+        auto-fit,
+        minmax(220px, 1fr)
+    );
+    gap: 32px;
 }
 
 .item, .item2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 20px 10px;
 }
+.buttons{
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
 .item img, .item2 img{
     width: 250px;
     border-radius: 10px;
@@ -303,78 +401,65 @@ figure{
     text-decoration: underline;
 }
 
-.name, .name2{
+.name{
     text-align: center;
     padding: 10px;
-    font-size:22px;
+    font-size:17px;
 }
 
 .link, .git{
-    display: inline-block;
     width: 80px;
     text-align: center;
-    background: linear-gradient(to right, #56ccf2, #2f80ed);;
+    background: linear-gradient(to right, #0085ff, #69b4ff);;
     padding: 7px;
-    margin-left: 20px;
     border-radius: 5px;
     transition: .4s ease-in;
 }
 
 .git{
-    background: linear-gradient(to right, #0575e6, #021b79);;
+    background: linear-gradient(to right, #0085ff, #69b4ff);;
 }
 
-.link a, .git a, .git2 a{
+.link a, .git a{
     text-decoration: none;
-    color: white;
+    color: #FFFFFF;
 }
 
 .item2{
     text-align: center;
 }
 
-.git2{
-    background: linear-gradient(to right, #0575e6, #021b79);;
-    padding: 7px;
-    width: 80px;
-    margin: 0 auto;
-    border-radius: 5px;
-    transition: .4s ease-in;
-}
-
 .link:hover{
-    transform: scale(1.2);
-    box-shadow: inset 6em 0 0 0 #05cbfF;
+    transform: scale(1.3);
+    box-shadow: inset 6em 0 0 0 #43c3ff;
 }
 
 .link:hover a, .git:hover a{
     transition: .6s ease-in;
 }
 
-.git:hover, .git2:hover{
-    transform: scale(1.2);
-    box-shadow: inset 6em 0 0 0 #a8a8a8;
-    color: #3e3e3e;
+.git:hover{
+    transform: scale(1.3);
+    box-shadow: inset 6em 0 0 0 #43c3ff;
 }
 
 /*--------------------CONTACTO------------------------*/
-.contact{
-    background: rgba(240,240,255,0.5);
-    margin: 0px -12.5% auto;
-    padding:  10px 40px 40px;
-}
 
+.container:nth-child(6){
+background-color: #ffffff61;
+padding: 0 0 30px;
+}
 
 .social{
     display: grid;
     grid-template-columns: auto auto auto; 
-    justify-content:space-around;
     align-items: center;
-    padding: 20px 0px;
+    justify-content: space-around;
 }
 
 .social figure{
     transition: 500ms;
+    width: 70px;
 }
 .social figure img{
     margin: 0 auto;
@@ -382,7 +467,7 @@ figure{
     border-radius: 20%;
 }
 
-.social figcaption{
+.social figure p{
     text-align: center;
     font-family: Itim;
 }
@@ -394,12 +479,15 @@ figure{
 .social figure:hover{
     transform: scale(1.3);
     filter: invert(23%) sepia(94%) saturate(1968%) hue-rotate(197deg) brightness(95%) contrast(92%);
-    
 }
 
-#git:hover{
+.social figure p:hover{
+    cursor: pointer;
+}
+
+.social figure:nth-of-type(3):hover{
     filter: invert(30%) sepia(90%) saturate(3%) hue-rotate(61deg) brightness(96%) contrast(96%) ;    
-   }
+}
 
 .social a{
     text-decoration: none;
@@ -407,14 +495,15 @@ figure{
 }
 
 .text{
-    font-size: 20px;
+    font-size: 21px;
     text-align: center;
+    margin: 5px 0px 15px;
 }
 
 .download{
-    transition: 800ms;
+    transition: 1s;
     margin: 10px auto 0;
-    width: 50%;
+    width: 70%;
     padding: 15px;
     border-radius: 10px;
     box-sizing:border-box;
@@ -440,7 +529,7 @@ a .download{
 
 .download:hover{
     transform: scale(1.1);
-    box-shadow: inset 33em 0 0 0 #F20593;
+    box-shadow: inset 38.5em 0 0 0 #18cb45;
 }
 
 .save{
@@ -448,17 +537,23 @@ a .download{
     margin-right: 20px;
 }
 
+.social:nth-of-type(2){
+    display: none;
+}
+
 /*--------------------FOOTER------------------------*/
 
 footer{
-    background: linear-gradient(to left, #83a4d4, #b6fbff);
+    background: linear-gradient(to left, #69b4ff, #e1ffff);
     text-align: center;
     font-family: itim;
-    
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 .bottomImg{
-    padding: 15px 0px 0px;
-    width: 250px;
+    padding: 30px 0px;
+    width: 80px;
 }
 
 .copy{
@@ -481,7 +576,7 @@ footer{
     .principal li{
         list-style: none;
         float: left;
-        padding: 30px 8px;
+        padding: 18px 8px;
         cursor: pointer;
         font-size: 16px;
         transition: 500ms;
@@ -498,74 +593,115 @@ footer{
 
     /*--------------------BANNER------------------------*/
     
-    .sig, .ant{
-        opacity: 0.9;
+    .intro p{
+        font-size: 30px;
+        text-align: center;
+        padding: 0 70px;
     }
+    .intro p:first-child{
+        font-size: 50px;
+       }
     
+    .buttonDownload {
+        padding: 15px 30px;
+        font-size: 20px;
+        cursor: auto;
+       }
     
-    .dots{
-        top: 2px;
-        width: 10px;
-        height: 10px;
-        margin: 0 2px;
+       .intro p img{
+        width:105px;
+
     }
-    
-    #b1:checked~ #uno, #b2:checked~ #dos, #b3:checked~ #tres{
-        z-index: 1;
+
+       .buttonDownload:hover {
+        transform: scale(1);
+        background-color: #4CC7F3;
+       }
+       
+       .buttonDownload:after {
+        margin-top: -3px;
+        border-style: solid;
+        border-width: 8px 8px 0px 8px;
+        animation: none;
+       }
+
+    /*--------------------SOBRE MÍ------------------------*/
+
+    .aboutMe{
+        padding: 30px 0;
     }
-    
-    #b1:checked~ .navDots #dot1, #b2:checked~ .navDots #dot2, #b3:checked~ .navDots #dot3{
-        background: rgba(0, 0, 0, 0.6);
-    }
-    
-    
-    .ant:hover, .sig:hover{
-        opacity: 1;
+
+    .description{
+        font-size: 20px;
     }
     
     /*--------------------ESTUDIOS------------------------*/
-    #years, #descStudy{
+    .education{
         display: none;
     }
 
     .title{
         font-size: 45px;
     }
+    .studies{
+        padding: 0 0 20px;
+    }
 
-    .years-mini{
+    .education_mini{
         display: flex;
-        flex-flow: column;
+        flex-direction: column;
+        row-gap: 15px;
+    }
+
+    .card {
+        width: 70%;
+        height: 110%;
         margin: 0 auto;
+        background-color: #c5e9ff;
+        border-radius: 8px;
+        z-index: 1;
+        
+       }
+       
+       .tools {
+        display: flex;
         align-items: center;
-    }
-
-    .years-mini p{
-        font-size: 20px;
-        text-align: center;
-    }
-
-    .year{
-        width: 150px;
-        position: none;
-        padding: 5px;
+        padding: 9px;
+       }
+       
+       .circle {
+        padding: 0 4px;
+       }
+       
+       .box {
+        display: inline-block;
+        align-items: center;
+        width: 10px;
+        height: 10px;
+        padding: 1px;
         border-radius: 50%;
-        transition: 0ms;
-    }
-    
-    .year:hover{
-        transform: scale(1) rotateZ(0deg);
-        filter: none;
-    }
+       }
+       
+       .red {
+        background-color: #ff605c;
+       }
+       
+       .yellow {
+        background-color: #ffbd44;
+       }
+       
+       .green {
+        background-color: #00ca4e;
+       }
+       
+       .card_content{
+        padding: 0px 10px 20px;
+        color: #000000;
+        text-align: center;
+       }
 
     /*--------------------CONOCIMIENTOS------------------------*/
 
-    figure{
-        padding: 18px;
-    }
-
-    #c7{
-        grid-area: 3/2;
-    }
 
     .languages figcaption{
         text-align: center;
@@ -585,8 +721,7 @@ footer{
     }
 
     .websites, .otherProyects{
-        column-gap: 5px;
-        justify-content: space-around;
+    gap: 10px;
     }
     
 
@@ -598,60 +733,59 @@ footer{
         width: 210px;
     }
 
-    .name, .name2{
+    .buttons{
+        gap: 14px;
+    }
+
+    .name{
         text-align: center;
         padding: 10px;
-        font-size: 18px;
+        font-size: 15px;
     }
 
     .link{
         margin-left: 0;
     }
 
-    .link:hover, .git:hover, .git2:hover{
+    .link:hover, .git:hover{
         transform: scale(1);
         box-shadow: none;
     }
 
     /*--------------------CONTACTO------------------------*/
-    .contact{
-        background: rgba(240,240,255,0.6);
-        padding:  10px 40px 40px;
+    .social figure:hover, .social figure:nth-of-type(3):hover{
+        transform: scale(1);
+        filter: none;
     }
 
-    .social figure:nth-child(1), .social figure:nth-child(2){
+    .social figcaption{
         filter: invert(23%) sepia(94%) saturate(1968%) hue-rotate(197deg) brightness(95%) contrast(92%);
     }
 
-    .social figure:nth-child(3){
-        filter: invert(30%) sepia(90%) saturate(3%) hue-rotate(61deg) brightness(56%) contrast(96%) ;    
+    .social figure:nth-of-type(3) figcaption{
+        filter: invert(30%) sepia(90%) saturate(3%) hue-rotate(61deg) brightness(96%) contrast(96%) ;
     }
 
-    #s-g3{
+    .social figure p{
+        font-size: 15px;
+    }
+
+    .social figure img{
         width: 70px;
     }
 
-    .social figure:hover{
-        transform: scale(1);
-    }
-
-    #git:hover{
-        filter: invert(30%) sepia(90%) saturate(3%) hue-rotate(61deg) brightness(56%) contrast(96%) ;    
-    }
-
     .social a{
-        text-decoration: none;
         color: #3e3e3e;
     }
 
     .text{
-        font-size: 20px;
+        font-size: 18px;
         text-align: center;
     }
 
     .download{
         margin: 5px auto 0;
-        width: 70%;
+        width: 75%;
         padding: 10px;
         font-size: 20px;
     }
@@ -669,29 +803,17 @@ footer{
 /*--------------------FOOTER------------------------*/
 
     footer{
-        background: linear-gradient(to left, #83a4d4, #b6fbff);
         text-align: center;
         font-family: itim;
         
     }
     .bottomImg{
-        padding: 15px 0px 0px;
-        width: 250px;
+        padding: 15px 0px ;
+        width: 80px;
     }
 
     .copy{
         font-size: 15px;
-        padding: 7px 0 30px 0;
-    }
-
-    /*--------------------FOOTER------------------------*/
-
-    .bottomImg{
-        width: 180px;
-    }
-
-    .copy{
-        font-size: 12px;
         padding: 7px 0 30px 0;
     }
 
@@ -717,7 +839,7 @@ footer{
     .principal {
         position: absolute; 
         left: 0;
-        top: 45px;
+        top: 54px;
         transform: translate(0, 0%);
         -ms-transform: translate(0, 0%);
         font-family: Itim;
@@ -725,7 +847,7 @@ footer{
         width: 100%;
         height: 100vh;
         transform: translateX(-100%);
-        transition: all 500ms ease-out;
+        transition: all 300ms ease-out;
     }
 
     .contenido{
@@ -758,26 +880,54 @@ footer{
     #check:checked ~ .principal{
         visibility: visible;
         transform: translateY(0%);
-        transition: all 500ms ease-in;
+        transition: all 300ms ease-in;
     }
 
-    .sig, .ant{
-        opacity: 1;
-        width: 19%;
-        height: 21%;
-        bottom: -10px;
-        box-sizing: content-box;
+    /*---------------------BANNER--------------------------*/
+
+    .intro p{
+        font-size: 22px;
+        padding: 0 30px;
+
     }
+    .intro p:first-child{
+        font-size: 45px;
+    }
+
+    .intro p img{
+        width:95px;
+        height:auto;
+        margin-bottom: -15px;
+    }
+    
+    .buttonDownload {
+        padding: 15px 25px;
+        font-size: 17px;
+        cursor: auto;
+       }
+
+       .buttonDownload:hover {
+        transform: scale(1);
+        background-color: #4CC7F3;
+       }
+       
+       .buttonDownload:after {
+        margin-top: -3px;
+        margin-right: -15px;
+        border-style: solid;
+        border-width: 7px 7px 0px 7px;
+        animation: none;
+       }
 
     /*--------------------SOBRE MÍ------------------------*/
 
     .aboutMe{
-        display: inline-block;
-        grid-column-gap: 35px;
+        display: flex;
+        flex-direction: column;
         align-items: center; 
         text-align: justify;
-        margin: 30px auto 10px auto;
-        padding: 0px 0 0 0;
+
+        padding: 20px 0 ;
     }
 
     .picture{
@@ -794,14 +944,22 @@ footer{
         text-align: center;
     }
 
-     /*--------------------CONOCIMIENTOS------------------------*/
-
-    .langs{
-        grid-template-columns: auto auto;
+    .card_content{
+        font-size: 13px;
     }
 
-    .icons{
-        width: 100px;
+     /*--------------------CONOCIMIENTOS------------------------*/
+    .langs{
+     grid-template-columns: repeat( 
+        auto-fit,
+        minmax(90px, 0.9fr)
+    );
+    gap: 25px;
+    }
+
+    figure{
+        padding: 0px;
+        margin: 0 auto;
     }
 
     /*--------------------ESTUDIOS------------------------*/
@@ -812,27 +970,36 @@ footer{
         font-size: 30px;
     }
 
-    .years-mini p{
-        font-size: 18px;
-        text-align: center;
-    }
 
     /*--------------------PROYECTOS------------------------*/
 
     .websites, .otherProyects{
-        grid-template-columns: auto auto;
-        column-gap: 5px;
-        justify-content: space-around;
+        grid-template-columns: repeat( auto-fit, minmax(180px, 1fr) );
+        gap: 13px;
     }
 
     .item img, .item2 img{
-        width: 190px;
+        width: 160px;
         display: flex;
         margin: 0 auto  ;
     }
 
+    .buttons{
+        gap: 8px;
+    }
+
     a .download{
         font-size: 20px;
+    }
+
+    .name{
+        font-size:15px;
+    }
+
+    .link, .git {
+        width: 65px;
+        text-align: center;
+        font-size: 13px;
     }
 }
 
@@ -844,44 +1011,72 @@ footer{
         left: 15px;
     }
 
-    .langs{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    .logo{
+        left: 55%;
     }
 
-    .year{
-        width: 130px;
+
+    .title{
+        font-size: 25px;
     }
 
-    .years-mini p{
-        font-size: 15px;
-        text-align: center;
+    .intro p {
+        font-size: 20px;
+        padding: 0px 18px;
+    }
+
+    .intro p:first-child {
+        font-size: 35px;
+    }
+
+    .subtitle{
+        font-size: 20px;
+    }
+
+    .card{
+        width: 90%;
+    }
+
+    .card_content{
+        font-size: 13px;
     }
 
     /*--------------------PROYECTOS------------------------*/
 
-    .websites, .otherProyects{
-        grid-template-columns: auto;
-        column-gap: 5px;
-        justify-content: space-around;
-    }
 
-    .item img, .item2 img{
-        width: 190px;
-    }
-
-    .git{
-        margin-left: 4px;
-    }
-
-    .social{
-        display: flex;
+    .buttons{
         flex-direction: column;
     }
 
-    a .download{
+    /*--------------------CONTACTO------------------------*/
+
+    figcaption{
+        display: flex;
+        justify-content: center;
+    }
+
+    .contact .text{
+        font-size: 13px;
+    }
+
+    .social figure{
+        padding: 0px;
+    }
+
+    .social figure p{
+        font-size: 13px;
+    }
+
+    .social figure img, #s-g3{
+        width: 40px;
+    }
+
+    .contact a .download{
         font-size: 15px;
+    }
+
+    .download{
+        width: 95%;
     }
 
     .save {
@@ -890,8 +1085,13 @@ footer{
 
     /*--------------------FOOTER------------------------*/
 
+    footer{
+        flex-direction: column;
+    }
+
     .bottomImg{
-        width: 150px;
+        width: 85px;
+        padding: 10px 0 0;
     }
 
     .copy{

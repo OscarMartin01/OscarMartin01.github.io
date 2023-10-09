@@ -34,62 +34,35 @@
 
         <main>
             <section class="slider">
-
-                <input type="radio" name="images" id="b1" checked>
-                <input type="radio" name="images" id="b2">
-                <input type="radio" name="images" id="b3">
-               
-                <div class="wrapper" id="uno">
-                    <img src="img/banner1.png" alt="Banner" >
-                    <label for="b3" class="ant"></label>
-                    <label for="b2" class="sig"></label>
-                </div>
-                <div class="wrapper" id="dos">
-                    <img src="img/info.png" alt="Banner 1">
-                    <label for="b1" class="ant"></label>
-                    <label for="b3" class="sig"></label>
-                </div>
-                <div class="wrapper" id="tres">
-                    <img src="img/contacto.png" alt="Banner 2">
-                    <label for="b2" class="ant"></label>
-                    <label for="b1" class="sig"></label>
-                </div>
-
-                <div class="navDots">
-                    <label class="dots" id="dot1" for="b1"></label>
-                    <label class="dots" id="dot2" for="b2"></label>
-                    <label class="dots" id="dot3" for="b3"></label>
-                </div>
-
+                <img src="img/banner.jpg" alt="Banner" class="banner">
+                <div class="intro">
+                    <p>Hola<img src="img/Wave hand.gif" alt="Saludo" >, Bienvenidos a mi portafolio</p>
+                    <p>Abajo conocerán más sobre mí y lo que hago:</p>
+                    <a class="scrollto" data-link="aboutMe" id="sobreMi"><button class="buttonDownload">Comencemos</button></a>
+                </div>   
             </section>
-      
-            <div  id="container">
+            <div class="container">
                 <section class="aboutMe" id="aboutMe">
-                    <img src="img/foto.jpg" alt="Foto" class="picture">
-                    <article class="description">
-                        <h2>¿Quien soy?</h2>
-                        <h3>Mi nombre es Oscar Martin</h3>
-                        <p>Soy programador e ingeniero electrónico, me considero una persona con habilidades como innovación, creatividad, trabajo en equipo, y disposición al aprendizaje para cumplir los objetivos a realizar.</p>
-                    </article>
+
+                        <img src="img/foto.jpg" alt="Foto" class="picture">
+                        <article class="description">
+                            <h2>¿Quien soy?</h2>
+                            <h3>Mi nombre es Oscar Martin</h3>
+                            <p>Soy programador e ingeniero electrónico, me considero una persona con habilidades como innovación, creatividad, trabajo en equipo, y disposición al aprendizaje para cumplir los objetivos a realizar.</p>
+                        </article>
+            </div>                 
+            <div class="container">
                 </section>
                 <section class="studies" id="studies">
-                    <h2 class="title">Mis estudios</h2>
-                    <div id="years">
-                        <img src="img/2018.png" alt="2018" class="year" onmouseover="infoIn1()" onmouseout="infoOut()">
-                        <img src="img/2021.png" alt="2021" class="year" onmouseover="infoIn2()" onmouseout="infoOut()">
-                        <img src="img/2022.png" alt="2022" class="year" onmouseover="infoIn3()" onmouseout="infoOut()"> 
-                    </div>
-                    <p id="descStudy"></p>
 
-                    <div class="years-mini">
-                        <img src="img/2018.png" alt="2018" class="year" >
-                        <p class="degree">Universidad Cooperativa de Colombia <br> Ingeniería Electrónica</p>
-                        <img src="img/2021.png" alt="2021" class="year" >
-                        <p class="degree">Udemy <br>Máster en JavaScript: Aprender JS, jQuery, Angular, NodeJS</p>
-                        <img src="img/2022.png" alt="2022" class="year" > 
-                        <p class="degree">EUniversidad Nacional de Colombia y MINTIC <br>Diplomado Ciclo 2 (Java y MySQL)</p>
-                    </div>
+                        <h2 class="title">Mis estudios</h2>
+    
+                        <div class="education"></div>
+
+                        <div class="education_mini"></div>
                 </section>
+            </div>
+            <div class="container">
                 <section class="languages" id="languages">
                     <h2 class="title">Tengo conocimiento en...</h2>
                     <div class="langs">
@@ -117,45 +90,63 @@
                             <img src="icons/mongodb.svg" alt="MongoDB" class="icons">
                             <figcaption>MongoDB</figcaption>
                         </figure>
-                        <figure id="c7">
+                        <figure>
                             <img src="icons/mysql.svg" alt="MySQL" class="icons" >
                             <figcaption>MySQL</figcaption>
                         </figure>
+                        <figure>
+                            <img src="icons//jquery.svg" alt="MySQL" class="icons" >
+                            <figcaption>jQuery</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="icons/androidstudio.svg" alt="MySQL" class="icons" >
+                            <figcaption>Android Studio (Kotlin)</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="icons/springboot.svg" alt="MySQL" class="icons" >
+                            <figcaption>Spring Boot</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="icons/git.svg" alt="MySQL" class="icons" >
+                            <figcaption>Git</figcaption>
+                        </figure>
                     </div>
                 </section>
+            </div>
+            <div class="container">
                 <section class="projects" id="projects">
                     <h2 class="title">Mis proyectos</h2>
                     <h2 class="subtitle">Paginas web</h2>
-                    <div class="websites">
-
-                    </div>
+                    <div class="websites"></div>
                     <h2 class="subtitle">Otros proyectos</h2>
                     <h3>Java</h3>
                     <div class="otherProyects">
 
                     </div>
                 </section>
+            </div>
+            <div class="container">
                 <section class="contact" id="contact">
                     <h2 class="title">Contacto</h2>
                     <p class="text">Pueden visitarme y/o contactarme a través los siguientes links:</p>
                     <div class="social">
                         <figure>
-                            <img src="icons/facebook.svg" alt="Facebook">
-                            <figcaption><a href="https://www.facebook.com/omartin01/">Facebook</a></figcaption>
+                            <figcaption><a href="https://www.facebook.com/omartin01/"><img src="icons/facebook.svg" alt="Facebook"></a></figcaption>
+                            <p>Facebook</p>
                         </figure>
                         <figure>
-                            <img src="icons/linkedin.svg" alt="LinkedIn">
-                            <figcaption><a href="https://www.linkedin.com/in/oscarmartin01/">Linkedin</a></figcaption>
+                            
+                            <figcaption><a href="https://www.linkedin.com/in/oscarmartin01/"> <img src="icons/linkedin.svg" alt="LinkedIn"></a></figcaption>
+                            <p>LinkedIn</p>
                         </figure>
-                        <figure id="git">
-                            <img src="icons/github.svg" alt="Github" id="s-g3">
-                            <figcaption><a href="https://github.com/OscarMartin01">Github</a></figcaption>
+
+                        <figure>
+                            <figcaption><a href="https://github.com/OscarMartin01"><img src="icons/github.svg" alt="Github" id="s-g3"></a></figcaption>
+                            <p>Github</p>
                         </figure>
                     </div>
                     <p class="text">A continuación estará mi hoja de vida para que la puedan descargar.</p>
                     <a href="cv/Oscar Martin.pdf" download> <button class="download"><img class="save" src="icons/download_line.png" alt="Descargar"> Descargar hoja de vida</button></a>
-                </section>
-
         </main>
         <footer>
             <img src="img/logoCompleto.png" alt="Logo completo" class="bottomImg">
