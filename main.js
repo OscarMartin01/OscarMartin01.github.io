@@ -180,7 +180,6 @@ var website=[
         });
     });
 
-
     //SCROLL
 
     var links= document.querySelectorAll(".scrollto");
@@ -205,5 +204,28 @@ var website=[
         };
       };
 
+//------------------------------------------------------------------------------------
 
+      var elements= document.querySelectorAll('.container');
+
+      function callback(entries){
+        
+        entries.forEach(entry=>{
+            console.log(entry.isIntersecting);
+            const contain= entry.target.querySelector('section');
+            contain.classList.toggle('unset', entry.isIntersecting);
+        })
+      }
+
+      var options ={
+        root: null,
+        rootMargin: '0px',
+        threshold: 0
+      }
+      const observer= new IntersectionObserver(callback, options);
+
+      elements.forEach( section=>{
+        observer.observe(section);
+      })
+      
     
